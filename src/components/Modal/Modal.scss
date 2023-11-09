@@ -1,6 +1,5 @@
 /* Modal container */
 .modal {
-  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -10,14 +9,41 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
+  transition: transform 0.3s, opacity 0.3s;
+  display: flex;
 
   /* Form inside the modal */
-  .form {
+  &-content {
     background-color: #fff;
-    padding: 20px;
+    padding: 40px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     max-width: 400px;
+    margin: auto;
+    position: relative;
+
+    span {
+      opacity: 1;
+      &.greeting-person {
+        font-weight: 500;
+      }
+    }
+    
+
+    button {
+      padding: 0;
+      border: none;
+      background: none;
+      position: absolute;
+      top: -1px;
+      right: 2px;
+      svg {
+        width: 17px;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
   }
 }
 

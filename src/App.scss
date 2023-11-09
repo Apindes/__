@@ -2,6 +2,10 @@
 @use './components/Modal/Modal.scss';
 .App {
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -28,6 +32,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+button {
+  cursor: pointer;
 }
 
 @keyframes App-logo-spin {

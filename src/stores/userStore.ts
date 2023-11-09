@@ -6,25 +6,21 @@ export class UserStore {
   showModal = false;
 
   constructor() {
-    this.firstName = '';
-    this.lastName = '';
-    console.log('this', this)
     makeAutoObservable(this);
+    this.setFirstName = this.setFirstName.bind(this);
+    this.setLastName = this.setLastName.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
-  @action
-  setFirstName(name: string) {
-    console.log('setFirstName', this, name);
-    this.firstName = name;
+  @action setFirstName(name: string) {
+    this.firstName = name.trim();
   }
 
-  @action
-  setLastName(name: string) {
-    this.lastName = name;
+  @action setLastName(name: string) {
+    this.lastName = name.trim();
   }
 
-  @action
-  toggleModal() {
+  @action toggleModal() {
     this.showModal = !this.showModal;
   }
 
@@ -32,6 +28,3 @@ export class UserStore {
     return `${this.firstName} ${this.lastName}`;
   }
 }
-
-//const store = new UserStore();
-//export default store;
