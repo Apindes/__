@@ -28,7 +28,6 @@ const Form: React.FC = observer(() => {
       showError('firstName', 'Please specify your first name');
     }
     if (!lastName) {
-      console.log('errors !lastName')
       showError('lastName', 'Please specify your lastName name')
     }
     if (firstName && lastName) {
